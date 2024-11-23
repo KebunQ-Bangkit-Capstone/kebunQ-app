@@ -1,13 +1,151 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
+    android:layout_gravity="center"
     tools:context=".ui.register.RegisterFragment">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
 
-</FrameLayout>
+    <ImageView
+        android:id="@+id/logoKebunQ"
+        android:layout_width="101dp"
+        android:layout_height="101dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.061"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/tv_hello"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:layout_marginTop="48dp"
+        android:gravity="top"
+        android:lineSpacingExtra="4sp"
+        android:text="@string/tv_register"
+        android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
+        android:translationY="-1.94sp"
+        app:layout_constraintEnd_toEndOf="@+id/logoKebunQ"
+        app:layout_constraintStart_toStartOf="@+id/logoKebunQ"
+        app:layout_constraintTop_toBottomOf="@+id/logoKebunQ"
+        tools:ignore="TextSizeCheck" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="?attr/textInputOutlinedStyle"
+        android:id="@+id/tf_username"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:hint="@string/username"
+        app:layout_constraintEnd_toEndOf="@+id/tv_hello"
+        app:layout_constraintStart_toStartOf="@+id/tv_hello"
+        app:layout_constraintTop_toBottomOf="@+id/tv_hello">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tf_email"
+        style="?attr/textInputOutlinedStyle"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/email"
+        android:layout_marginTop="39dp"
+        app:layout_constraintEnd_toEndOf="@+id/tf_username"
+        app:layout_constraintStart_toStartOf="@+id/tf_username"
+        app:layout_constraintTop_toBottomOf="@+id/tf_username">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tf_password"
+        style="?attr/textInputOutlinedStyle"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="39dp"
+        android:hint="@string/password"
+        app:layout_constraintEnd_toEndOf="@+id/tf_email"
+        app:layout_constraintStart_toStartOf="@+id/tf_email"
+        app:layout_constraintTop_toBottomOf="@+id/tf_email"
+        app:endIconMode="password_toggle">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="textPassword"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btn_register"
+        style="@style/Widget.Material3.Button.Icon"
+        android:layout_width="380dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="39dp"
+        android:lineSpacingExtra="5sp"
+        android:text="@string/btn_Register"
+        android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+        app:layout_constraintEnd_toEndOf="@+id/tf_password"
+        app:layout_constraintStart_toStartOf="@+id/tf_password"
+        app:layout_constraintTop_toBottomOf="@+id/tf_password"
+        tools:ignore="VisualLintButtonSize" />
+
+    <TextView
+        android:id="@+id/or"
+        android:layout_width="380dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="24dp"
+        android:gravity="center_horizontal|top"
+        android:lineSpacingExtra="5sp"
+        android:text="@string/or"
+        android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+        android:translationY="-2.62sp"
+        app:layout_constraintEnd_toEndOf="@+id/btn_register"
+        app:layout_constraintStart_toStartOf="@+id/btn_register"
+        app:layout_constraintTop_toBottomOf="@+id/btn_register"
+        tools:ignore="TextSizeCheck" />
+
+    <Button
+        android:id="@+id/googlebtn"
+        style="@style/Widget.Material3.Button.ElevatedButton.Icon"
+        android:layout_width="380dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="24dp"
+        android:paddingStart="100dp"
+        android:paddingEnd="100dp"
+        android:text="@string/btn_google"
+        android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+        app:icon="@drawable/ic_google"
+        app:layout_constraintEnd_toEndOf="@+id/or"
+        app:layout_constraintStart_toStartOf="@+id/or"
+        app:layout_constraintTop_toBottomOf="@+id/or"
+        tools:ignore="VisualLintButtonSize" />
+
+    <Button
+        android:id="@+id/btn_facebook"
+        style="@style/Widget.Material3.Button.ElevatedButton.Icon"
+        android:layout_width="380dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="24dp"
+        android:paddingStart="80dp"
+        android:paddingEnd="80dp"
+        android:text="@string/btn_facebook"
+        android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+        app:icon="@drawable/ic_facebook"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/googlebtn"
+        app:layout_constraintStart_toStartOf="@+id/googlebtn"
+        app:layout_constraintTop_toBottomOf="@+id/googlebtn"
+        app:layout_constraintVertical_bias="0.015"
+        tools:ignore="VisualLintButtonSize,VisualLintBounds" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
